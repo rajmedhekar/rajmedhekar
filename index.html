@@ -26,9 +26,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; font-size: 16px; }
-
 body {
   background: var(--black);
   color: var(--white);
@@ -38,12 +36,10 @@ body {
   overflow-x: hidden;
 }
 
-/* ── SCROLLBAR ── */
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: var(--black); }
 ::-webkit-scrollbar-thumb { background: var(--gold); }
 
-/* ── GRID BACKGROUND ── */
 body::before {
   content: '';
   position: fixed;
@@ -56,7 +52,6 @@ body::before {
   z-index: 0;
 }
 
-/* ── AMBIENT ORBS ── */
 .orb {
   position: fixed;
   border-radius: 50%;
@@ -90,7 +85,6 @@ body::before {
   66% { transform: translate(-20px,20px) scale(0.95); }
 }
 
-/* ── CURSOR GLOW ── */
 #cursor-glow {
   width: 300px; height: 300px;
   background: radial-gradient(circle, rgba(201,169,110,0.06) 0%, transparent 70%);
@@ -102,7 +96,6 @@ body::before {
   transition: opacity 0.3s;
 }
 
-/* ── CANVAS PARTICLES ── */
 #particles-canvas {
   position: fixed;
   inset: 0;
@@ -111,7 +104,6 @@ body::before {
   opacity: 0.5;
 }
 
-/* ── TICKER ── */
 .ticker-wrap {
   position: relative;
   z-index: 1;
@@ -120,7 +112,6 @@ body::before {
   border-bottom: 1px solid var(--border);
   background: rgba(201,169,110,0.02);
   padding: 10px 0;
-  margin-bottom: 0;
 }
 .ticker-track {
   display: flex;
@@ -148,7 +139,6 @@ body::before {
   to { transform: translateX(-50%); }
 }
 
-/* ── SECTION GLOW DIVIDERS ── */
 .section-glow {
   position: absolute;
   top: 0; left: 50%;
@@ -158,15 +148,9 @@ body::before {
   background: linear-gradient(90deg, transparent, rgba(201,169,110,0.3), transparent);
 }
 
-/* ── GLASSMORPHISM CARDS ── */
-.project-card {
-  backdrop-filter: blur(8px);
-}
-.about-edu {
-  backdrop-filter: blur(8px);
-}
+.project-card { backdrop-filter: blur(8px); }
+.about-edu { backdrop-filter: blur(8px); }
 
-/* ── SHIMMER TEXT ── */
 .shimmer {
   background: linear-gradient(90deg, var(--gold) 0%, var(--gold2) 40%, #fff8e8 50%, var(--gold2) 60%, var(--gold) 100%);
   background-size: 200% auto;
@@ -180,10 +164,6 @@ body::before {
   to { background-position: -200% center; }
 }
 
-/* ── NUMBER COUNTER ── */
-.count-up { display: inline-block; }
-
-/* ── CARD SHINE ── */
 .project-card::after {
   content: '';
   position: absolute;
@@ -192,7 +172,6 @@ body::before {
   pointer-events: none;
 }
 
-/* ── SECTION ACCENT LINE ── */
 .section-title::after {
   content: '';
   display: block;
@@ -203,38 +182,11 @@ body::before {
   opacity: 0.6;
 }
 
-/* ── HOVER LIFT FOR EXP ── */
-.exp-item {
-  transition: border-color 0.3s;
-}
-.exp-item:hover {
-  border-color: rgba(201,169,110,0.3);
-}
+.exp-item { transition: border-color 0.3s; }
+.exp-item:hover { border-color: rgba(201,169,110,0.3); }
 
-/* ── GLOWING BORDER CARDS ── */
-.pdf-card {
-  position: relative;
-  overflow: hidden;
-}
-.pdf-card::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  background: linear-gradient(135deg, rgba(201,169,110,0.15), transparent, rgba(42,107,242,0.1));
-  opacity: 0;
-  transition: opacity 0.4s;
-  z-index: 0;
-  border-radius: inherit;
-}
-.pdf-card:hover::before { opacity: 1; }
-.pdf-card > * { position: relative; z-index: 1; }
+.skill-tag:hover { box-shadow: 0 0 20px rgba(201,169,110,0.1); }
 
-/* ── SKILL TAG GLOW ── */
-.skill-tag:hover {
-  box-shadow: 0 0 20px rgba(201,169,110,0.1);
-}
-
-/* ── SECTION BG PATTERNS ── */
 #experience::before {
   content: '';
   position: absolute;
@@ -259,10 +211,7 @@ body::before {
   pointer-events: none;
 }
 
-/* ── ANIMATED UNDERLINE FOR NAV ── */
-.nav-links a {
-  position: relative;
-}
+.nav-links a { position: relative; }
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -273,7 +222,6 @@ body::before {
 }
 .nav-links a:hover::after { width: 100%; }
 
-/* ── NAV ── */
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -300,11 +248,7 @@ nav.scrolled {
   text-decoration: none;
 }
 .nav-logo span { color: var(--gold); }
-.nav-links {
-  display: flex;
-  gap: 36px;
-  list-style: none;
-}
+.nav-links { display: flex; gap: 36px; list-style: none; }
 .nav-links a {
   text-decoration: none;
   color: var(--muted);
@@ -324,25 +268,18 @@ nav.scrolled {
   text-decoration: none;
   transition: all 0.25s;
 }
-.nav-cta:hover {
-  background: var(--gold);
-  color: var(--black);
-}
+.nav-cta:hover { background: var(--gold); color: var(--black); }
 
-/* ── HERO ── */
 #hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 60px;
+  padding: 100px 60px 0;
   overflow: hidden;
   z-index: 1;
 }
-.hero-inner {
-  max-width: 900px;
-  animation: fadeUp 1s ease both;
-}
+.hero-inner { max-width: 900px; animation: fadeUp 1s ease both; }
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -363,9 +300,7 @@ nav.scrolled {
   border-radius: 50%;
   animation: pulse 2s infinite;
 }
-@keyframes pulse {
-  0%,100% { opacity:1; } 50% { opacity:0.3; }
-}
+@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
 .hero-name {
   font-family: var(--font-display);
   font-size: clamp(3.5rem, 8vw, 7rem);
@@ -374,10 +309,7 @@ nav.scrolled {
   letter-spacing: -0.02em;
   margin-bottom: 24px;
 }
-.hero-name em {
-  font-style: italic;
-  color: var(--gold);
-}
+.hero-name em { font-style: italic; color: var(--gold); }
 .hero-tagline {
   font-size: 1.05rem;
   color: var(--muted);
@@ -387,12 +319,7 @@ nav.scrolled {
   font-weight: 300;
 }
 .hero-tagline strong { color: var(--white); font-weight: 400; }
-.hero-ctas {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-bottom: 80px;
-}
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 80px; }
 .btn-primary {
   background: var(--gold);
   color: var(--black);
@@ -416,15 +343,8 @@ nav.scrolled {
   transition: all 0.25s;
 }
 .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
-.hero-metrics {
-  display: flex;
-  gap: 48px;
-  flex-wrap: wrap;
-}
-.metric {
-  border-left: 1px solid var(--gold);
-  padding-left: 16px;
-}
+.hero-metrics { display: flex; gap: 48px; flex-wrap: wrap; }
+.metric { border-left: 1px solid var(--gold); padding-left: 16px; }
 .metric-val {
   font-family: var(--font-display);
   font-size: 2rem;
@@ -449,11 +369,10 @@ nav.scrolled {
 }
 .hero-chart svg { width: 100%; }
 
-/* ── SEEKING BANNER ── */
 .seeking-banner {
   position: relative;
   z-index: 1;
-  margin: 0 60px 0;
+  margin: 0 60px;
   border: 1px solid rgba(201,169,110,0.2);
   background: linear-gradient(135deg, rgba(201,169,110,0.05), rgba(42,107,242,0.05));
   padding: 20px 36px;
@@ -463,11 +382,7 @@ nav.scrolled {
   flex-wrap: wrap;
   gap: 16px;
 }
-.seeking-left {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
+.seeking-left { display: flex; align-items: center; gap: 16px; }
 .seeking-dot {
   width: 8px; height: 8px;
   background: var(--green);
@@ -475,16 +390,9 @@ nav.scrolled {
   flex-shrink: 0;
   animation: pulse 2s infinite;
 }
-.seeking-text {
-  font-size: 0.85rem;
-  color: var(--white);
-}
+.seeking-text { font-size: 0.85rem; color: var(--white); }
 .seeking-text strong { color: var(--gold); }
-.seeking-roles {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
+.seeking-roles { display: flex; gap: 8px; flex-wrap: wrap; }
 .role-tag {
   font-family: var(--font-mono);
   font-size: 0.68rem;
@@ -495,12 +403,7 @@ nav.scrolled {
   padding: 5px 12px;
 }
 
-/* ── SECTION BASE ── */
-section {
-  position: relative;
-  z-index: 1;
-  padding: 100px 60px;
-}
+section { position: relative; z-index: 1; padding: 100px 60px; }
 .section-label {
   font-family: var(--font-mono);
   font-size: 0.68rem;
@@ -516,51 +419,15 @@ section {
   line-height: 1.1;
   margin-bottom: 60px;
 }
-.divider {
-  width: 48px;
-  height: 1px;
-  background: var(--gold);
-  margin: 20px 0 60px;
-}
 
-/* ── ABOUT ── */
 #about { background: var(--navy); }
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-.about-text p {
-  color: var(--muted);
-  line-height: 1.9;
-  margin-bottom: 20px;
-  font-size: 0.95rem;
-}
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.about-text p { color: var(--muted); line-height: 1.9; margin-bottom: 20px; font-size: 0.95rem; }
 .about-text p strong { color: var(--white); font-weight: 400; }
-.about-edu {
-  border: 1px solid var(--border);
-  padding: 32px;
-  background: var(--surface);
-}
-.edu-school {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  color: var(--white);
-  margin-bottom: 4px;
-}
-.edu-degree {
-  color: var(--gold);
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-  margin-bottom: 20px;
-}
-.edu-courses {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
+.about-edu { border: 1px solid var(--border); padding: 32px; background: var(--surface); }
+.edu-school { font-family: var(--font-display); font-size: 1.4rem; color: var(--white); margin-bottom: 4px; }
+.edu-degree { color: var(--gold); font-size: 0.85rem; letter-spacing: 0.05em; margin-bottom: 20px; }
+.edu-courses { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
 .edu-courses li {
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -571,7 +438,6 @@ section {
   padding: 5px 12px;
 }
 
-/* ── EXPERIENCE ── */
 #experience { background: var(--black); }
 .exp-item {
   border-left: 1px solid var(--border);
@@ -595,12 +461,7 @@ section {
   flex-wrap: wrap;
   gap: 8px;
 }
-.exp-company {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: var(--white);
-}
+.exp-company { font-family: var(--font-display); font-size: 1.5rem; font-weight: 500; color: var(--white); }
 .exp-period {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -609,23 +470,9 @@ section {
   border: 1px solid var(--border);
   padding: 5px 12px;
 }
-.exp-role {
-  color: var(--gold);
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-  margin-bottom: 6px;
-}
-.exp-location {
-  font-size: 0.78rem;
-  color: var(--muted);
-  margin-bottom: 20px;
-}
-.exp-bullets {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+.exp-role { color: var(--gold); font-size: 0.85rem; letter-spacing: 0.05em; margin-bottom: 6px; }
+.exp-location { font-size: 0.78rem; color: var(--muted); margin-bottom: 20px; }
+.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .exp-bullets li {
   font-size: 0.9rem;
   color: var(--muted);
@@ -633,18 +480,9 @@ section {
   gap: 12px;
   line-height: 1.7;
 }
-.exp-bullets li::before {
-  content: '→';
-  color: var(--gold);
-  flex-shrink: 0;
-  margin-top: 2px;
-}
+.exp-bullets li::before { content: '→'; color: var(--gold); flex-shrink: 0; margin-top: 2px; }
 .exp-bullets li strong { color: var(--white); font-weight: 400; }
-.exp-clients {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
-}
+.exp-clients { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); }
 .exp-clients-label {
   font-family: var(--font-mono);
   font-size: 0.68rem;
@@ -653,19 +491,10 @@ section {
   color: var(--muted);
   margin-bottom: 10px;
 }
-.client-list {
-  font-size: 0.8rem;
-  color: var(--muted);
-  line-height: 1.8;
-}
+.client-list { font-size: 0.8rem; color: var(--muted); line-height: 1.8; }
 
-/* ── PROJECTS ── */
 #projects { background: var(--navy); }
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
+.projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .project-card {
   border: 1px solid var(--border);
   background: var(--surface);
@@ -693,25 +522,9 @@ section {
   margin-bottom: 16px;
   opacity: 0.6;
 }
-.project-name {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  color: var(--white);
-  margin-bottom: 12px;
-  line-height: 1.2;
-}
-.project-desc {
-  font-size: 0.87rem;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-.project-tools {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 20px;
-}
+.project-name { font-family: var(--font-display); font-size: 1.35rem; color: var(--white); margin-bottom: 12px; line-height: 1.2; }
+.project-desc { font-size: 0.87rem; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
+.project-tools { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
 .tool-tag {
   font-family: var(--font-mono);
   font-size: 0.65rem;
@@ -721,109 +534,29 @@ section {
   border: 1px solid rgba(42,107,242,0.3);
   padding: 3px 10px;
 }
-.project-outcome {
-  font-size: 0.82rem;
-  color: var(--green);
-  font-weight: 400;
-}
-.project-metrics {
-  list-style: none;
-  margin-top: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.project-metrics li {
-  font-size: 0.82rem;
-  color: var(--muted);
-  display: flex;
-  gap: 8px;
-}
+.project-metrics { list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+.project-metrics li { font-size: 0.82rem; color: var(--muted); display: flex; gap: 8px; }
 .project-metrics li::before { content: '↑'; color: var(--green); }
 
-/* ── PROJECT PDFs ── */
-#project-pdfs { background: var(--black); }
-.pdf-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-.pdf-card {
-  border: 1px solid var(--border);
-  background: var(--surface);
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  transition: border-color 0.3s;
-}
-.pdf-card:hover { border-color: rgba(201,169,110,0.3); }
-.pdf-icon {
-  width: 40px; height: 40px;
-  border: 1px solid rgba(201,169,110,0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gold);
-  font-size: 1rem;
-}
-.pdf-title {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  color: var(--white);
-  line-height: 1.2;
-}
-.pdf-summary {
-  font-size: 0.85rem;
-  color: var(--muted);
-  line-height: 1.7;
-  flex: 1;
-}
-.pdf-tools {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--muted);
-  letter-spacing: 0.06em;
-}
-.pdf-actions {
-  display: flex;
-  gap: 10px;
-}
+/* View Report button — full width now that download is removed */
 .pdf-btn-view {
-  flex: 1;
+  display: block;
+  width: 100%;
   text-align: center;
   padding: 10px;
   border: 1px solid var(--border2);
   color: var(--muted);
   text-decoration: none;
+  font-family: var(--font-body);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: all 0.25s;
 }
 .pdf-btn-view:hover { border-color: var(--gold); color: var(--gold); }
-.pdf-btn-dl {
-  flex: 1;
-  text-align: center;
-  padding: 10px;
-  background: rgba(201,169,110,0.1);
-  border: 1px solid rgba(201,169,110,0.3);
-  color: var(--gold);
-  text-decoration: none;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: all 0.25s;
-}
-.pdf-btn-dl:hover { background: var(--gold); color: var(--black); }
 
-/* ── SKILLS ── */
 #skills { background: var(--navy); }
-.skills-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
+.skills-tags { display: flex; flex-wrap: wrap; gap: 12px; }
 .skill-tag {
   display: flex;
   align-items: center;
@@ -837,11 +570,7 @@ section {
   transition: all 0.25s;
   cursor: default;
 }
-.skill-tag:hover {
-  border-color: rgba(201,169,110,0.4);
-  background: var(--surface2);
-  color: var(--gold);
-}
+.skill-tag:hover { border-color: rgba(201,169,110,0.4); background: var(--surface2); color: var(--gold); }
 .skill-tag-check {
   width: 16px; height: 16px;
   border: 1.5px solid var(--gold);
@@ -851,12 +580,8 @@ section {
   justify-content: center;
   flex-shrink: 0;
 }
-.skill-tag-check svg {
-  width: 10px; height: 10px;
-  stroke: var(--gold);
-}
+.skill-tag-check svg { width: 10px; height: 10px; stroke: var(--gold); }
 
-/* ── CERTIFICATIONS ── */
 #certifications { background: var(--black); }
 .cert-group { margin-bottom: 48px; }
 .cert-group-title {
@@ -869,11 +594,7 @@ section {
   padding-bottom: 12px;
   border-bottom: 1px solid var(--border);
 }
-.cert-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
+.cert-list { display: flex; flex-direction: column; gap: 12px; }
 .cert-item {
   display: flex;
   justify-content: space-between;
@@ -886,25 +607,11 @@ section {
   gap: 8px;
 }
 .cert-item:hover { border-color: rgba(201,169,110,0.25); }
-.cert-name {
-  font-size: 0.88rem;
-  color: var(--white);
-  font-weight: 400;
-}
-.cert-issuer {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--muted);
-  letter-spacing: 0.06em;
-}
+.cert-name { font-size: 0.88rem; color: var(--white); font-weight: 400; }
+.cert-issuer { font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted); letter-spacing: 0.06em; }
 
-/* ── LEADERSHIP ── */
 #leadership { background: var(--navy); }
-.leadership-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
+.leadership-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
 .leadership-col-title {
   font-family: var(--font-mono);
   font-size: 0.68rem;
@@ -913,43 +620,16 @@ section {
   color: var(--gold);
   margin-bottom: 24px;
 }
-.leadership-item {
-  padding: 24px 0;
-  border-bottom: 1px solid var(--border);
-}
+.leadership-item { padding: 24px 0; border-bottom: 1px solid var(--border); }
 .leadership-item:last-child { border-bottom: none; }
-.leadership-item-title {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  color: var(--white);
-  margin-bottom: 8px;
-}
-.leadership-item-desc {
-  font-size: 0.85rem;
-  color: var(--muted);
-  line-height: 1.7;
-}
-.social-item {
-  padding: 16px 0;
-  border-bottom: 1px solid var(--border);
-}
+.leadership-item-title { font-family: var(--font-display); font-size: 1.1rem; color: var(--white); margin-bottom: 8px; }
+.leadership-item-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+.social-item { padding: 16px 0; border-bottom: 1px solid var(--border); }
 .social-item:last-child { border-bottom: none; }
-.social-item-org {
-  font-size: 0.88rem;
-  color: var(--white);
-  font-weight: 400;
-  margin-bottom: 4px;
-}
-.social-item-desc {
-  font-size: 0.8rem;
-  color: var(--muted);
-}
+.social-item-org { font-size: 0.88rem; color: var(--white); font-weight: 400; margin-bottom: 4px; }
+.social-item-desc { font-size: 0.8rem; color: var(--muted); }
 
-/* ── CONTACT ── */
-#contact {
-  background: var(--black);
-  text-align: center;
-}
+#contact { background: var(--black); text-align: center; }
 .contact-inner { max-width: 600px; margin: 0 auto; }
 .contact-tagline {
   font-family: var(--font-display);
@@ -958,18 +638,8 @@ section {
   line-height: 1.2;
   margin-bottom: 20px;
 }
-.contact-sub {
-  color: var(--muted);
-  font-size: 0.92rem;
-  margin-bottom: 48px;
-  line-height: 1.8;
-}
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
+.contact-sub { color: var(--muted); font-size: 0.92rem; margin-bottom: 48px; line-height: 1.8; }
+.contact-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
 .contact-link {
   display: flex;
   align-items: center;
@@ -984,7 +654,6 @@ section {
 .contact-link:hover { border-color: var(--gold); color: var(--gold); }
 .contact-link svg { width: 16px; height: 16px; }
 
-/* ── FOOTER ── */
 footer {
   position: relative; z-index: 1;
   border-top: 1px solid var(--border);
@@ -995,54 +664,33 @@ footer {
   flex-wrap: wrap;
   gap: 12px;
 }
-.footer-name {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  color: var(--muted);
-}
-.footer-copy {
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  color: var(--muted);
-  letter-spacing: 0.08em;
-}
+.footer-name { font-family: var(--font-display); font-size: 1rem; color: var(--muted); }
+.footer-copy { font-family: var(--font-mono); font-size: 0.68rem; color: var(--muted); letter-spacing: 0.08em; }
 
-/* ── ANIMATIONS ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   nav { padding: 18px 24px; }
   .nav-links { display: none; }
   section { padding: 72px 24px; }
-  .about-grid, .projects-grid, .pdf-grid, .leadership-grid { grid-template-columns: 1fr; }
-  .skills-grid { grid-template-columns: 1fr 1fr; }
-  #hero { padding: 0 24px; }
+  .about-grid, .projects-grid, .leadership-grid { grid-template-columns: 1fr; }
+  #hero { padding: 100px 24px 0; }
   .seeking-banner { margin: 0 24px; }
   footer { padding: 24px; }
   .hero-chart { display: none; }
 }
 @media (max-width: 600px) {
-  .skills-grid { grid-template-columns: 1fr; }
   .hero-metrics { gap: 28px; }
 }
 </style>
 </head>
 <body>
 
-<!-- AMBIENT ORBS -->
 <div class="orb orb-1"></div>
 <div class="orb orb-2"></div>
 <div class="orb orb-3"></div>
@@ -1085,7 +733,6 @@ footer {
       </defs>
     </svg>
   </div>
-
   <div class="hero-inner">
     <div class="hero-badge">Available for Opportunities · New York, NY</div>
     <h1 class="hero-name">Raj<br><em class="shimmer">Medhekar</em></h1>
@@ -1097,18 +744,9 @@ footer {
       <a href="mailto:rajmedhekar@gmail.com" class="btn-secondary">Contact Me</a>
     </div>
     <div class="hero-metrics">
-      <div class="metric">
-        <div class="metric-val">20%</div>
-        <div class="metric-label">ROI Optimization</div>
-      </div>
-      <div class="metric">
-        <div class="metric-val">25%</div>
-        <div class="metric-label">Decision Acceleration</div>
-      </div>
-      <div class="metric">
-        <div class="metric-val">3+ Yrs</div>
-        <div class="metric-label">Product Management</div>
-      </div>
+      <div class="metric"><div class="metric-val">20%</div><div class="metric-label">ROI Optimization</div></div>
+      <div class="metric"><div class="metric-val">25%</div><div class="metric-label">Decision Acceleration</div></div>
+      <div class="metric"><div class="metric-val">3+ Yrs</div><div class="metric-label">Product Management</div></div>
     </div>
   </div>
 </section>
@@ -1116,53 +754,30 @@ footer {
 <!-- TICKER -->
 <div class="ticker-wrap">
   <div class="ticker-track">
-    <span class="ticker-item">FP&A <span class="t-val">↑</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">Financial Modeling <span class="t-up">▲</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">NPV / IRR Analysis <span class="t-val">↑</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">Capital Allocation <span class="t-up">▲</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">ROI Optimization <span class="t-val">+20%</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">Power BI <span class="t-up">▲</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">Tableau <span class="t-val">↑</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">Investment Analytics <span class="t-up">▲</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">Corporate Finance <span class="t-val">↑</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">Data-Driven Decisions <span class="t-up">▲</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">Sharpe Ratio <span class="t-val">↑</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">KPI Dashboards <span class="t-up">▲</span></span>
-    <span class="ticker-sep">·</span>
+    <span class="ticker-item">FP&amp;A <span class="t-val">↑</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Financial Modeling <span class="t-up">▲</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">NPV / IRR Analysis <span class="t-val">↑</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Capital Allocation <span class="t-up">▲</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">ROI Optimization <span class="t-val">+20%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Power BI <span class="t-up">▲</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Tableau <span class="t-val">↑</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Investment Analytics <span class="t-up">▲</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Corporate Finance <span class="t-val">↑</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Data-Driven Decisions <span class="t-up">▲</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Sharpe Ratio <span class="t-val">↑</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">KPI Dashboards <span class="t-up">▲</span></span><span class="ticker-sep">·</span>
     <!-- duplicate for infinite loop -->
-    <span class="ticker-item">FP&A <span class="t-val">↑</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">Financial Modeling <span class="t-up">▲</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">NPV / IRR Analysis <span class="t-val">↑</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">Capital Allocation <span class="t-up">▲</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">ROI Optimization <span class="t-val">+20%</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">Power BI <span class="t-up">▲</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">Tableau <span class="t-val">↑</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">Investment Analytics <span class="t-up">▲</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">Corporate Finance <span class="t-val">↑</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">Data-Driven Decisions <span class="t-up">▲</span></span>
-    <span class="ticker-sep">·</span>
-    <span class="ticker-item">Sharpe Ratio <span class="t-val">↑</span></span>
-    <span class="ticker-sep">·</span>
+    <span class="ticker-item">FP&amp;A <span class="t-val">↑</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Financial Modeling <span class="t-up">▲</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">NPV / IRR Analysis <span class="t-val">↑</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Capital Allocation <span class="t-up">▲</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">ROI Optimization <span class="t-val">+20%</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Power BI <span class="t-up">▲</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Tableau <span class="t-val">↑</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Investment Analytics <span class="t-up">▲</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Corporate Finance <span class="t-val">↑</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Data-Driven Decisions <span class="t-up">▲</span></span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Sharpe Ratio <span class="t-val">↑</span></span><span class="ticker-sep">·</span>
     <span class="ticker-item">KPI Dashboards <span class="t-up">▲</span></span>
   </div>
 </div>
@@ -1171,10 +786,10 @@ footer {
 <div class="seeking-banner reveal">
   <div class="seeking-left">
     <div class="seeking-dot"></div>
-    <p class="seeking-text"><strong>Currently Seeking Opportunities</strong> — FP&A · Investment Management · Corporate Banking · Product Management · New York City</p>
+    <p class="seeking-text"><strong>Currently Seeking Opportunities</strong> — FP&amp;A · Investment Management · Corporate Banking · Product Management · New York City</p>
   </div>
   <div class="seeking-roles">
-    <span class="role-tag">FP&A</span>
+    <span class="role-tag">FP&amp;A</span>
     <span class="role-tag">Investment Roles</span>
     <span class="role-tag">Corporate Finance</span>
     <span class="role-tag">Product Management</span>
@@ -1188,22 +803,14 @@ footer {
   <h2 class="section-title">About</h2>
   <div class="about-grid">
     <div class="about-text reveal">
-      <p>
-        I'm a <strong>finance-focused product and analytics professional</strong> currently pursuing my MBA in Business Analytics (STEM) at Pace University's Lubin School of Business.
-      </p>
-      <p>
-        With over three years of cross-industry experience spanning InsurTech, digital agencies, and enterprise clients, I specialize in <strong>financial modeling, capital allocation strategy, and data-driven decision making</strong> — bridging the gap between raw data and executive-level insight.
-      </p>
-      <p>
-        My work has consistently delivered measurable outcomes: from improving ROI on capital allocation by 20% using Tableau to accelerating enterprise decision cycles by 25% through Power BI dashboards. I've led product and analytics efforts for clients ranging from government bodies to multinational shipping firms.
-      </p>
-      <p>
-        I'm now targeting roles in <strong>FP&A, investment management, corporate banking, and product management</strong> — where financial rigor meets strategic execution.
-      </p>
+      <p>I'm a <strong>finance-focused product and analytics professional</strong> currently pursuing my MBA in Business Analytics (STEM) at Pace University's Lubin School of Business.</p>
+      <p>With over three years of cross-industry experience spanning InsurTech, digital agencies, and enterprise clients, I specialize in <strong>financial modeling, capital allocation strategy, and data-driven decision making</strong> — bridging the gap between raw data and executive-level insight.</p>
+      <p>My work has consistently delivered measurable outcomes: from improving ROI on capital allocation by 20% using Tableau to accelerating enterprise decision cycles by 25% through Power BI dashboards. I've led product and analytics efforts for clients ranging from government bodies to multinational shipping firms.</p>
+      <p>I'm now targeting roles in <strong>FP&amp;A, investment management, corporate banking, and product management</strong> — where financial rigor meets strategic execution.</p>
     </div>
     <div class="reveal">
       <div class="about-edu">
-        <div class="section-label" style="margin-bottom: 8px;">Education</div>
+        <div class="section-label" style="margin-bottom:8px;">Education</div>
         <div class="edu-school">Pace University<br>Lubin School of Business</div>
         <div class="edu-degree">MBA · Business Analytics (STEM) · 2025–2027</div>
         <ul class="edu-courses">
@@ -1263,7 +870,7 @@ footer {
 
     <div class="project-card reveal">
       <div class="project-num">Project 01</div>
-      <div class="project-name">Capital Budgeting & Valuation</div>
+      <div class="project-name">Capital Budgeting &amp; Valuation</div>
       <div class="project-desc">Built robust Excel-based valuation models to evaluate capital investments and optimize resource allocation decisions across multiple scenarios.</div>
       <div class="project-tools">
         <span class="tool-tag">Excel</span>
@@ -1274,15 +881,14 @@ footer {
         <li>Improved expected ROI by 18% through scenario modeling</li>
         <li>Developed multi-variable sensitivity tables for risk assessment</li>
       </ul>
-      <div class="pdf-actions" style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);">
-        <a href="#" onclick="openPDF('cap_writeup');return false;" class="pdf-btn-view">View Report</a>
-        <a href="#" onclick="downloadPDF('cap_excel','Capital_Budgeting.pdf');return false;" class="pdf-btn-dl">↓ Excel Model</a>
+      <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);">
+        <a href="Capital_Budgeting_Project_Writeup.pdf" target="_blank" class="pdf-btn-view">View Report</a>
       </div>
     </div>
 
     <div class="project-card reveal">
       <div class="project-num">Project 02</div>
-      <div class="project-name">Data Visualization & Business Insights — Zara</div>
+      <div class="project-name">Data Visualization &amp; Business Insights — Zara</div>
       <div class="project-desc">Analyzed Zara's pricing, promotions, and product placement using R Studio to identify key drivers of sales performance across 700 product observations.</div>
       <div class="project-tools">
         <span class="tool-tag">R Studio</span>
@@ -1294,9 +900,8 @@ footer {
         <li>Increased revenue potential by 12% via pricing pattern discovery</li>
         <li>Built predictive models and data visualizations for stakeholders</li>
       </ul>
-      <div class="pdf-actions" style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);">
-        <a href="#" onclick="openPDF('zara');return false;" class="pdf-btn-view">View Report</a>
-        <a href="#" onclick="downloadPDF('zara','Zara_Pricing_Effect_Data_Visualization.pdf');return false;" class="pdf-btn-dl">↓ Download</a>
+      <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);">
+        <a href="Zara_Pricing_Effect.pdf" target="_blank" class="pdf-btn-view">View Report</a>
       </div>
     </div>
 
@@ -1314,9 +919,8 @@ footer {
         <li>Improved portfolio allocation efficiency by 15%</li>
         <li>Developed risk-adjusted return framework for digital assets</li>
       </ul>
-      <div class="pdf-actions" style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);">
-        <a href="#" onclick="openPDF('crypto');return false;" class="pdf-btn-view">View Report</a>
-        <a href="#" onclick="downloadPDF('crypto','Cryptocurrency_as_an_Asset_Class.pdf');return false;" class="pdf-btn-dl">↓ Download</a>
+      <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);">
+        <a href="Cryptocurrency_as_an_Asset_Class.pdf" target="_blank" class="pdf-btn-view">View Report</a>
       </div>
     </div>
 
@@ -1333,9 +937,8 @@ footer {
         <li>Projected 10% market share growth through strategic positioning</li>
         <li>Identified levers driving 20% engagement increase</li>
       </ul>
-      <div class="pdf-actions" style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);">
-        <a href="#" onclick="openPDF('rolex');return false;" class="pdf-btn-view">View Report</a>
-        <a href="#" onclick="downloadPDF('rolex','MBA-806_Rolex_Final_Presentation.pdf');return false;" class="pdf-btn-dl">↓ Download</a>
+      <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);">
+        <a href="MBA-806_Rolex_Final_Presentation.pdf" target="_blank" class="pdf-btn-view">View Report</a>
       </div>
     </div>
 
@@ -1346,11 +949,10 @@ footer {
 <section id="skills">
   <div class="section-label">04 — Capabilities</div>
   <h2 class="section-title">Skills</h2>
-  <div class="skills-grid">
   <div class="skills-tags reveal">
     <div class="skill-tag"><div class="skill-tag-check"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>Financial Modeling (NPV, IRR, Sensitivity)</div>
     <div class="skill-tag"><div class="skill-tag-check"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>Capital Allocation Strategy</div>
-    <div class="skill-tag"><div class="skill-tag-check"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>Dashboarding & KPI Design</div>
+    <div class="skill-tag"><div class="skill-tag-check"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>Dashboarding &amp; KPI Design</div>
     <div class="skill-tag"><div class="skill-tag-check"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>Microsoft Office Suite</div>
     <div class="skill-tag"><div class="skill-tag-check"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>Microsoft Excel</div>
     <div class="skill-tag"><div class="skill-tag-check"><svg viewBox="0 0 10 10" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5,5 4,7.5 8.5,2.5"/></svg></div>Microsoft PowerPoint</div>
@@ -1375,56 +977,27 @@ footer {
     <div class="cert-group-title">Core Certifications</div>
     <div class="cert-list">
       <div class="cert-item">
-        <div>
-          <div class="cert-name">Certified Scrum Product Owner</div>
-          <div class="cert-issuer">Scrum Alliance</div>
-        </div>
+        <div><div class="cert-name">Certified Scrum Product Owner</div><div class="cert-issuer">Scrum Alliance</div></div>
         <div class="role-tag" style="color:var(--gold);border-color:rgba(201,169,110,0.3)">CSPO</div>
       </div>
       <div class="cert-item">
-        <div>
-          <div class="cert-name">Agile with Atlassian Jira</div>
-          <div class="cert-issuer">Atlassian</div>
-        </div>
+        <div><div class="cert-name">Agile with Atlassian Jira</div><div class="cert-issuer">Atlassian</div></div>
         <div class="role-tag" style="color:var(--gold);border-color:rgba(201,169,110,0.3)">Agile</div>
       </div>
       <div class="cert-item">
-        <div>
-          <div class="cert-name">Advanced Google Analytics</div>
-          <div class="cert-issuer">Google</div>
-        </div>
+        <div><div class="cert-name">Advanced Google Analytics</div><div class="cert-issuer">Google</div></div>
         <div class="role-tag" style="color:var(--gold);border-color:rgba(201,169,110,0.3)">Analytics</div>
       </div>
     </div>
   </div>
 
   <div class="cert-group reveal">
-    <div class="cert-group-title">Product & Strategy</div>
+    <div class="cert-group-title">Product &amp; Strategy</div>
     <div class="cert-list">
-      <div class="cert-item">
-        <div>
-          <div class="cert-name">Product Management Essentials</div>
-          <div class="cert-issuer">University of Maryland · Coursera</div>
-        </div>
-      </div>
-      <div class="cert-item">
-        <div>
-          <div class="cert-name">Brand and Product Management</div>
-          <div class="cert-issuer">IE Business School · Coursera</div>
-        </div>
-      </div>
-      <div class="cert-item">
-        <div>
-          <div class="cert-name">Product Management Course</div>
-          <div class="cert-issuer">Relevel · Unacademy</div>
-        </div>
-      </div>
-      <div class="cert-item">
-        <div>
-          <div class="cert-name">Nano Tips for Aspiring Product Managers</div>
-          <div class="cert-issuer">LinkedIn Learning</div>
-        </div>
-      </div>
+      <div class="cert-item"><div><div class="cert-name">Product Management Essentials</div><div class="cert-issuer">University of Maryland · Coursera</div></div></div>
+      <div class="cert-item"><div><div class="cert-name">Brand and Product Management</div><div class="cert-issuer">IE Business School · Coursera</div></div></div>
+      <div class="cert-item"><div><div class="cert-name">Product Management Course</div><div class="cert-issuer">Relevel · Unacademy</div></div></div>
+      <div class="cert-item"><div><div class="cert-name">Nano Tips for Aspiring Product Managers</div><div class="cert-issuer">LinkedIn Learning</div></div></div>
     </div>
   </div>
 </section>
@@ -1432,7 +1005,7 @@ footer {
 <!-- LEADERSHIP -->
 <section id="leadership">
   <div class="section-label">06 — Impact</div>
-  <h2 class="section-title">Leadership & Social Impact</h2>
+  <h2 class="section-title">Leadership &amp; Social Impact</h2>
   <div class="leadership-grid">
     <div>
       <div class="leadership-col-title">Leadership</div>
@@ -1447,26 +1020,11 @@ footer {
     </div>
     <div>
       <div class="leadership-col-title">Social Impact</div>
-      <div class="social-item reveal">
-        <div class="social-item-org">Apan Foundation India</div>
-        <div class="social-item-desc">Contributed to cancer detection and public health service camps</div>
-      </div>
-      <div class="social-item reveal">
-        <div class="social-item-org">Global Cancer Concern India</div>
-        <div class="social-item-desc">Participated in nationwide cancer awareness and relief initiatives</div>
-      </div>
-      <div class="social-item reveal">
-        <div class="social-item-org">ALERT India</div>
-        <div class="social-item-desc">Supported leprosy elimination and rehabilitation programs across communities</div>
-      </div>
-      <div class="social-item reveal">
-        <div class="social-item-org">CARE India Association</div>
-        <div class="social-item-desc">Contributed to cancer awareness and care for underserved communities</div>
-      </div>
-      <div class="social-item reveal">
-        <div class="social-item-org">National Association for the Blind — India</div>
-        <div class="social-item-desc">Fundraising and awareness campaign participation</div>
-      </div>
+      <div class="social-item reveal"><div class="social-item-org">Apan Foundation India</div><div class="social-item-desc">Contributed to cancer detection and public health service camps</div></div>
+      <div class="social-item reveal"><div class="social-item-org">Global Cancer Concern India</div><div class="social-item-desc">Participated in nationwide cancer awareness and relief initiatives</div></div>
+      <div class="social-item reveal"><div class="social-item-org">ALERT India</div><div class="social-item-desc">Supported leprosy elimination and rehabilitation programs across communities</div></div>
+      <div class="social-item reveal"><div class="social-item-org">CARE India Association</div><div class="social-item-desc">Contributed to cancer awareness and care for underserved communities</div></div>
+      <div class="social-item reveal"><div class="social-item-org">National Association for the Blind — India</div><div class="social-item-desc">Fundraising and awareness campaign participation</div></div>
     </div>
   </div>
 </section>
@@ -1476,7 +1034,7 @@ footer {
   <div class="contact-inner">
     <div class="section-label" style="text-align:center;margin-bottom:16px;">07 — Connect</div>
     <h2 class="contact-tagline reveal">Let's Build Something<br><em style="color:var(--gold);font-family:var(--font-display)">Worth Measuring.</em></h2>
-    <p class="contact-sub reveal">Open to FP&A, investment, corporate finance, and product management roles in New York City. I bring analytical depth, financial modeling rigor, and a track record of measurable impact.</p>
+    <p class="contact-sub reveal">Open to FP&amp;A, investment, corporate finance, and product management roles in New York City. I bring analytical depth, financial modeling rigor, and a track record of measurable impact.</p>
     <div class="contact-links reveal">
       <a href="mailto:rajmedhekar@gmail.com" class="contact-link">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -1497,172 +1055,10 @@ footer {
 <!-- FOOTER -->
 <footer>
   <div class="footer-name">Raj Medhekar</div>
-  <div class="footer-copy">© 2025 · New York, NY · Finance & Analytics</div>
+  <div class="footer-copy">© 2025 · New York, NY · Finance &amp; Analytics</div>
 </footer>
 
 <script>
-// Nav scroll
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-});
-
-// Scroll reveal
-const reveals = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 60);
-      io.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-reveals.forEach(el => io.observe(el));
-
-// ── CURSOR GLOW ──
-const cursorGlow = document.getElementById('cursor-glow');
-document.addEventListener('mousemove', (e) => {
-  cursorGlow.style.left = e.clientX + 'px';
-  cursorGlow.style.top = e.clientY + 'px';
-});
-document.addEventListener('mouseleave', () => cursorGlow.style.opacity = '0');
-document.addEventListener('mouseenter', () => cursorGlow.style.opacity = '1');
-
-// ── PARTICLE CANVAS ──
-const canvas = document.getElementById('particles-canvas');
-const ctx = canvas.getContext('2d');
-let particles = [];
-const GOLD = 'rgba(201,169,110,';
-const BLUE = 'rgba(42,107,242,';
-
-function resize() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-resize();
-window.addEventListener('resize', resize);
-
-class Particle {
-  constructor() { this.reset(); }
-  reset() {
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height;
-    this.size = Math.random() * 1.5 + 0.3;
-    this.speedX = (Math.random() - 0.5) * 0.3;
-    this.speedY = (Math.random() - 0.5) * 0.3 - 0.1;
-    this.opacity = Math.random() * 0.5 + 0.1;
-    this.color = Math.random() > 0.7 ? BLUE : GOLD;
-    this.life = 0;
-    this.maxLife = Math.random() * 300 + 200;
-  }
-  update() {
-    this.x += this.speedX;
-    this.y += this.speedY;
-    this.life++;
-    if (this.life > this.maxLife || this.y < -10) this.reset();
-  }
-  draw() {
-    const alpha = this.opacity * Math.sin((this.life / this.maxLife) * Math.PI);
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fillStyle = this.color + alpha + ')';
-    ctx.fill();
-  }
-}
-
-for (let i = 0; i < 80; i++) particles.push(new Particle());
-
-function animateParticles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  // Draw connection lines between nearby particles
-  for (let i = 0; i < particles.length; i++) {
-    for (let j = i + 1; j < particles.length; j++) {
-      const dx = particles[i].x - particles[j].x;
-      const dy = particles[i].y - particles[j].y;
-      const dist = Math.sqrt(dx*dx + dy*dy);
-      if (dist < 100) {
-        ctx.beginPath();
-        ctx.moveTo(particles[i].x, particles[i].y);
-        ctx.lineTo(particles[j].x, particles[j].y);
-        ctx.strokeStyle = GOLD + (0.04 * (1 - dist/100)) + ')';
-        ctx.lineWidth = 0.5;
-        ctx.stroke();
-      }
-    }
-    particles[i].update();
-    particles[i].draw();
-  }
-  requestAnimationFrame(animateParticles);
-}
-animateParticles();
-
-// ── COUNT-UP ANIMATION ──
-function countUp(el, target, suffix, duration) {
-  let start = 0;
-  const isFloat = target % 1 !== 0;
-  const step = (timestamp) => {
-    if (!start) start = timestamp;
-    const progress = Math.min((timestamp - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const current = eased * target;
-    el.textContent = (isFloat ? current.toFixed(1) : Math.floor(current)) + suffix;
-    if (progress < 1) requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
-}
-
-const metricVals = document.querySelectorAll('.metric-val');
-const metricData = [
-  { val: 20, suffix: '%' },
-  { val: 25, suffix: '%' },
-  { val: 3, suffix: '+ Yrs' },
-];
-const metricIO = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const i = Array.from(metricVals).indexOf(e.target);
-      if (metricData[i]) countUp(e.target, metricData[i].val, metricData[i].suffix, 1800);
-      metricIO.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.5 });
-metricVals.forEach(el => metricIO.observe(el));
-</script>
-
-<script>
-const _pdfData = {
-  cap_writeup: 'Capital_Budgeting_Project_Writeup.pdf',
-  cap_excel: 'Capital_Budgeting.pdf',
-  crypto: 'Cryptocurrency_as_an_Asset_Class.pdf',
-  rolex: 'MBA-806_Rolex_Final_Presentation.pdf',
-  zara: 'Zara_Pricing_Effect.pdf'
-};
-
-function openPDF(key) {
-  const modal = document.getElementById('pdf-modal');
-  const iframe = document.getElementById('pdf-iframe');
-  iframe.src = _pdfData[key];
-  modal.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-}
-
-function closePDFModal() {
-  const modal = document.getElementById('pdf-modal');
-  const iframe = document.getElementById('pdf-iframe');
-  modal.style.display = 'none';
-  iframe.src = '';
-  document.body.style.overflow = '';
-}
-
-function downloadPDF(key, filename) {
-  const a = document.createElement('a');
-  a.href = _pdfData[key];
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-}
-
 // Nav scroll
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
@@ -1722,13 +1118,19 @@ class Particle {
   }
 }
 for (let i = 0; i < 80; i++) particles.push(new Particle());
+
 function animateParticles() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   for (let i = 0; i < particles.length; i++) {
     for (let j = i + 1; j < particles.length; j++) {
       const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
       const dist = Math.sqrt(dx*dx + dy*dy);
-      if (dist < 100) { ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.strokeStyle = GOLD + (0.04 * (1 - dist/100)) + ')'; ctx.lineWidth = 0.5; ctx.stroke(); }
+      if (dist < 100) {
+        ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = GOLD + (0.04 * (1 - dist/100)) + ')';
+        ctx.lineWidth = 0.5; ctx.stroke();
+      }
     }
     particles[i].update(); particles[i].draw();
   }
@@ -1760,21 +1162,7 @@ const metricIO = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.5 });
 metricVals.forEach(el => metricIO.observe(el));
-
-// Close modal on backdrop click
-document.getElementById('pdf-modal').addEventListener('click', function(e) {
-  if (e.target === this) closePDFModal();
-});
-// Close on Escape
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closePDFModal(); });
 </script>
 
-<!-- PDF MODAL -->
-<div id="pdf-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.92);backdrop-filter:blur(12px);align-items:center;justify-content:center;flex-direction:column;gap:16px;">
-  <div style="display:flex;justify-content:flex-end;width:90%;max-width:1100px;">
-    <button onclick="closePDFModal()" style="background:rgba(201,169,110,0.1);border:1px solid rgba(201,169,110,0.4);color:#c9a96e;padding:10px 20px;cursor:pointer;font-family:'DM Mono',monospace;font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.2s;" onmouseover="this.style.background='rgba(201,169,110,0.2)'" onmouseout="this.style.background='rgba(201,169,110,0.1)'">✕ Close</button>
-  </div>
-  <iframe id="pdf-iframe" src="" style="width:90%;max-width:1100px;height:82vh;border:1px solid rgba(201,169,110,0.2);background:#fff;"></iframe>
-</div>
 </body>
 </html>
